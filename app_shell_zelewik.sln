@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app_shell_zelewik.Android", "app_shell_zelewik.Android\app_shell_zelewik.Android.csproj", "{9E42A4A0-7070-43FD-8686-A4703D5C4564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app_shell_zelewik", "app_shell_zelewik\app_shell_zelewik.csproj", "{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E42A4A0-7070-43FD-8686-A4703D5C4564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E42A4A0-7070-43FD-8686-A4703D5C4564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E42A4A0-7070-43FD-8686-A4703D5C4564}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9E42A4A0-7070-43FD-8686-A4703D5C4564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E42A4A0-7070-43FD-8686-A4703D5C4564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E42A4A0-7070-43FD-8686-A4703D5C4564}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609FBB61-5F5F-45F3-A85E-553AAA4EC8B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59E81CDC-C59D-46FE-8004-23C2C0D263EE}
+	EndGlobalSection
+EndGlobal
