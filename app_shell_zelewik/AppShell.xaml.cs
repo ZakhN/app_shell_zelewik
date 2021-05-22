@@ -17,7 +17,7 @@ namespace app_shell_zelewik
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//Main/Tasks/ItemsPage");
+            await Shell.Current.GoToAsync("//Main/Tasks/");
         }
     }
 }

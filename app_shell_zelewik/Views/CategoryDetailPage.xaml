@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_shell_zelewik.Views.CategoryDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Clicked="GoBack" Command="{Binding DeleteCommand}"/>
+        <ToolbarItem Text="Save" Clicked="GoBack" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="Category:" Style="{StaticResource labelStyle}" />
+        <Entry Text="{Binding Title}" FontSize="Small"/>
+        <Label Text="Description:" Style="{StaticResource labelStyle}" />
+        <Editor Text="{Binding Description}" FontSize="Small"/>
+
+        <Label Text="Success Rate:" Style="{StaticResource labelStyle}"/>
+        <Entry Text="{Binding SuccessRate}" FontSize="Small"/>
+    </StackLayout>
+</ContentPage>

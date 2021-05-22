@@ -1,5 +1,4 @@
-﻿using app_shell_zelewik.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,19 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace app_shell_zelewik.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CategoriesPage : ContentPage
+    public partial class CategoryDetailPage : ContentPage
     {
-        CategoriesViewModel viewModel;
-
-        public CategoriesPage()
+        public CategoryDetailPage()
         {
             InitializeComponent();
         }
-
-        protected void onAppearing()
+        async void GoBack(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            viewModel.OnAppearing();
+            Navigation.PopAsync();
         }
     }
 }

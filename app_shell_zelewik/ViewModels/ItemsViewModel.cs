@@ -3,6 +3,7 @@ using app_shell_zelewik.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -16,16 +17,27 @@ namespace app_shell_zelewik.ViewModels
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
+        public Command OpenSettingsCommand { get; set; }
+
+        public INavigation Navigation { get; set; }
+
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Tasks";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             ItemTapped = new Command<Item>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
+
+            OpenSettingsCommand = new Command(OpenSettingsPage);
+        }
+
+        private void OpenSettingsPage()
+        {
+            Navigation.PushAsync(new SettingsPage());
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -67,9 +79,10 @@ namespace app_shell_zelewik.ViewModels
             }
         }
 
-        private async void OnAddItem(object obj)
+        private void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            //await Shell.Current.GoToAsync(nameof(NewItemPage));
+            Navigation.PushAsync(new NewItemPage(this));
         }
 
         async void OnItemSelected(Item item)
@@ -78,7 +91,21 @@ namespace app_shell_zelewik.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}&CategoryName={item.Category}");
+        }
+
+        public int GetCurrentMaxId()
+        {
+            int maxId = 0;
+            if (Items.Count > 0)
+            {
+                Debug.WriteLine("Items count more than " + Items.Max(x => x.Id));
+                maxId = Items.Max(x => x.Id);
+            }
+            Debug.WriteLine(Items.Count);
+            Debug.WriteLine($"CurrentMaxId {maxId}");
+
+            return maxId;
         }
     }
 }
