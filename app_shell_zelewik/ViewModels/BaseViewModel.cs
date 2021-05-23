@@ -1,16 +1,18 @@
-﻿using app_shell_zelewik.Models;
-using app_shell_zelewik.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
 using Xamarin.Forms;
+
+using app_shell_zelewik.Models;
+using app_shell_zelewik.Services;
 
 namespace app_shell_zelewik.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Item, Category> DataStore => DependencyService.Get<IDataStore<Item, Category>>();
 
         bool isBusy = false;
         public bool IsBusy

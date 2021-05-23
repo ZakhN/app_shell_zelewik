@@ -1,7 +1,5 @@
-﻿using app_shell_zelewik.ViewModels;
-using app_shell_zelewik.Views;
+﻿using app_shell_zelewik.Views;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace app_shell_zelewik
@@ -13,11 +11,13 @@ namespace app_shell_zelewik
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(CategoryDetailPage), typeof(CategoryDetailPage));
+            Routing.RegisterRoute(nameof(NewCategoryPage), typeof(NewCategoryPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//Main/Tasks/");
+            await Shell.Current.GoToAsync("//LoginPage");
         }
     }
 }

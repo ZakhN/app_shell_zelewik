@@ -11,7 +11,10 @@ namespace app_shell_zelewik.Views
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = new ItemsViewModel() { Navigation = this.Navigation };
+
+            var settingViewModel = new SettingsViewModel();
+            settingViewModel.LoadSettings();
         }
 
         protected override void OnAppearing()

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using app_shell_zelewik.Models;
+using System;
 using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using app_shell_zelewik.Models;
 
 namespace app_shell_zelewik.ViewModels
 {

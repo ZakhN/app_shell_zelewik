@@ -7,6 +7,7 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary Source="Themes/LightTheme.xaml" />
             <Color x:Key="Primary">#2196F3</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
@@ -15,7 +16,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
@@ -27,6 +28,17 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
-        </ResourceDictionary>        
+
+            <Color x:Key="HeaderTextColor">#13c42d</Color>
+            <Color x:Key="HeaderBackgroundColor">#fff</Color>
+            <x:Double x:Key="fontSize">14</x:Double>
+
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
+                <Setter Property="FontSize" Value="{StaticResource Key=fontSize}"/>
+                <Setter Property="FontFamily" Value="Roboto-Thin"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

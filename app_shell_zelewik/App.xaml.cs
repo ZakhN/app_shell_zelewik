@@ -1,8 +1,5 @@
 ﻿using app_shell_zelewik.Services;
-using app_shell_zelewik.Views;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace app_shell_zelewik
 {
@@ -13,7 +10,7 @@ namespace app_shell_zelewik
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<FireBaseDataStore>();
             MainPage = new AppShell();
         }
 

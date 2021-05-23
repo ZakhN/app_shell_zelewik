@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace xamarin_master_detail.Themes
+namespace app_shell_zelewik.Themes
 {
     public partial class LightTheme : ResourceDictionary
     {

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using app_shell_zelewik.Models;
+﻿using app_shell_zelewik.Models;
+using app_shell_zelewik.Themes;
+using System.Collections.Generic;
 using Xamarin.Forms;
-using xamarin_master_detail.Themes;
 
 namespace app_shell_zelewik.ViewModels
 {
