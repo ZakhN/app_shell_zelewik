@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="app_shell_zelewik.Themes.DarkTheme">
-    <Color x:Key="PageBackgroundColor">Black</Color>
-    <Color x:Key="NavigationBarColor">Teal</Color>
-    <Color x:Key="PrimaryColor">Teal</Color>
+    <Color x:Key="PageBackgroundColor">Gray</Color>
+    <Color x:Key="NavigationBarColor">Coral</Color>
+    <Color x:Key="PrimaryColor">Coral</Color>
     <Color x:Key="SecondaryColor">White</Color>
     <Color x:Key="PrimaryTextColor">White</Color>
     <Color x:Key="SecondaryTextColor">White</Color>

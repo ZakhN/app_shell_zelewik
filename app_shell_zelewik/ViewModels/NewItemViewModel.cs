@@ -23,7 +23,6 @@ namespace app_shell_zelewik.ViewModels
         public NewItemViewModel()
         {
             Categories = new ObservableCollection<Category>();
-            //LoadCategoriesCommand = new Command(async () => await ExecuteLoadCategoriesCommand());
             ExecuteLoadCategoriesCommand();
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);

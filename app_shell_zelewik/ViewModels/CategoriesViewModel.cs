@@ -17,14 +17,17 @@ namespace app_shell_zelewik.ViewModels
         public Command LoadCategoriesCommand { get; }
         public Command AddCategoryCommand { get; }
         public Command<Category> CategoryTapped { get; }
-
+        private int categoryCount;
+        public int CategoriesCount { get { return categoryCount; } set { SetProperty(ref categoryCount, value); } }
         public INavigation Navigation { get; set; }
 
         public CategoriesViewModel()
         {
             Title = "Categories";
             Categories = new ObservableCollection<Category>();
-            LoadCategoriesCommand = new Command(async () => await ExecuteLoadCategoriesCommand());
+            ExecuteLoadCategoriesCommand();
+            //LoadCategoriesCommand = new Command(async () => await ExecuteLoadCategoriesCommand());
+            
             CategoryTapped = new Command<Category>(OnCategorySelected);
             AddCategoryCommand = new Command(OnAddCategory);
         }
@@ -41,6 +44,7 @@ namespace app_shell_zelewik.ViewModels
                 {
                     Categories.Add(category);
                 }
+
             }
             catch (Exception ex)
             {
@@ -50,7 +54,10 @@ namespace app_shell_zelewik.ViewModels
             {
                 IsBusy = false;
             }
+
+            CategoriesCount = Categories.Count;
         }
+
 
         public void OnAppearing()
         {
@@ -70,7 +77,6 @@ namespace app_shell_zelewik.ViewModels
 
         private void OnAddCategory(object obj)
         {
-            //await Shell.Current.GoToAsync(nameof(NewItemPage));
             Navigation.PushAsync(new NewCategoryPage(this));
         }
 
@@ -88,11 +94,8 @@ namespace app_shell_zelewik.ViewModels
             int maxId = 0;
             if (Categories.Count > 0)
             {
-                Debug.WriteLine("Categories count more than " + Categories.Max(x => x.Id));
                 maxId = Categories.Max(x => x.Id);
             }
-            Debug.WriteLine(Categories.Count);
-            Debug.WriteLine($"CurrentMaxId {maxId}");
 
             return maxId;
         }

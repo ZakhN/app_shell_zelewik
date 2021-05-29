@@ -99,11 +99,8 @@ namespace app_shell_zelewik.ViewModels
             int maxId = 0;
             if (Items.Count > 0)
             {
-                Debug.WriteLine("Items count more than " + Items.Max(x => x.Id));
                 maxId = Items.Max(x => x.Id);
             }
-            Debug.WriteLine(Items.Count);
-            Debug.WriteLine($"CurrentMaxId {maxId}");
 
             return maxId;
         }

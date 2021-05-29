@@ -29,7 +29,7 @@
                 </Setter>
             </Style>
 
-            <Color x:Key="HeaderTextColor">#13c42d</Color>
+            <Color x:Key="HeaderTextColor">#FF5733</Color>
             <Color x:Key="HeaderBackgroundColor">#fff</Color>
             <x:Double x:Key="fontSize">14</x:Double>
 

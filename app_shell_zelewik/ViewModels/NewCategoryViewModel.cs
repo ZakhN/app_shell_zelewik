@@ -13,7 +13,6 @@ namespace app_shell_zelewik.ViewModels
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
         public int CurrentMaxId { get; set; }
-
         public NewCategoryViewModel()
         {
             SaveCommand = new Command(OnSave, ValidateSave);
