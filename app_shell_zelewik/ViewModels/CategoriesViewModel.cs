@@ -13,7 +13,9 @@ namespace app_shell_zelewik.ViewModels
     {
         private Category selectedCategory;
 
-        public ObservableCollection<Category> Categories { get; }
+        private ObservableCollection<Category> сategories;
+
+        public ObservableCollection<Category> Categories { get { return сategories; } set { SetProperty(ref сategories, value); } }
         public Command LoadCategoriesCommand { get; }
         public Command AddCategoryCommand { get; }
         public Command<Category> CategoryTapped { get; }
@@ -25,9 +27,7 @@ namespace app_shell_zelewik.ViewModels
         {
             Title = "Categories";
             Categories = new ObservableCollection<Category>();
-            ExecuteLoadCategoriesCommand();
-            //LoadCategoriesCommand = new Command(async () => await ExecuteLoadCategoriesCommand());
-            
+            LoadCategoriesCommand = new Command(async () => await ExecuteLoadCategoriesCommand());
             CategoryTapped = new Command<Category>(OnCategorySelected);
             AddCategoryCommand = new Command(OnAddCategory);
         }
@@ -54,13 +54,24 @@ namespace app_shell_zelewik.ViewModels
             {
                 IsBusy = false;
             }
-
+  
             CategoriesCount = Categories.Count;
+
+            return;
         }
 
 
         public void OnAppearing()
         {
+            IsBusy = true;
+            selectedCategory = null;
+        }
+
+        public void OnAppearing(bool load)
+        {
+            //Task task = Task.Run(() => ExecuteLoadCategoriesCommand());
+            //task.Wait();
+            ExecuteLoadCategoriesCommand();
             IsBusy = true;
             selectedCategory = null;
         }
