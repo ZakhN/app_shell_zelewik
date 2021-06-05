@@ -21,6 +21,8 @@ namespace app_shell_zelewik.ViewModels
 
         public INavigation Navigation { get; set; }
 
+        private int itemsCount;
+        public int ItemsCount { get { return itemsCount; } set { SetProperty(ref itemsCount, value); } }
 
         public ItemsViewModel()
         {
@@ -61,10 +63,19 @@ namespace app_shell_zelewik.ViewModels
             {
                 IsBusy = false;
             }
+
+            ItemsCount = Items.Count;
+
+            return;
         }
 
-        public void OnAppearing()
+        public void OnAppearing(bool load)
         {
+            if (load)
+            {
+                Task task = Task.Run(() => ExecuteLoadItemsCommand());
+                task.Wait();
+            }
             IsBusy = true;
             SelectedItem = null;
         }

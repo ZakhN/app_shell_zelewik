@@ -20,7 +20,7 @@ namespace app_shell_zelewik.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.OnAppearing();
+            _viewModel.OnAppearing(false);
         }
     }
 }

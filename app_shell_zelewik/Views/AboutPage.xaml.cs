@@ -7,18 +7,24 @@ namespace app_shell_zelewik.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage
     {
-        CategoriesViewModel viewModel;
-     
+        CategoriesViewModel categoriesViewModel;
+        ItemsViewModel itemsViewModel;
+
         public AboutPage()
         {
             InitializeComponent();
-            BindingContext = viewModel = new CategoriesViewModel();
+            categoriesViewModel = new CategoriesViewModel();
+            itemsViewModel = new ItemsViewModel();
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            viewModel.OnAppearing(true);
+            itemsViewModel.OnAppearing(true);
+            categoriesViewModel.OnAppearing(true);
+
+            ItemsNumber.Text = itemsViewModel.ItemsCount.ToString();
+            CategoriesNumber.Text = categoriesViewModel.CategoriesCount.ToString();
         }
     }
 }

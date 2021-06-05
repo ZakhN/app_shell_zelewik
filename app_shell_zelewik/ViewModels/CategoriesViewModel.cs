@@ -60,18 +60,12 @@ namespace app_shell_zelewik.ViewModels
             return;
         }
 
-
-        public void OnAppearing()
-        {
-            IsBusy = true;
-            selectedCategory = null;
-        }
-
         public void OnAppearing(bool load)
         {
-            //Task task = Task.Run(() => ExecuteLoadCategoriesCommand());
-            //task.Wait();
-            ExecuteLoadCategoriesCommand();
+            if (load) {
+                Task task = Task.Run(() => ExecuteLoadCategoriesCommand());
+                task.Wait();
+            }
             IsBusy = true;
             selectedCategory = null;
         }
