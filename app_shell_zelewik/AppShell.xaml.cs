@@ -19,5 +19,10 @@ namespace app_shell_zelewik
         {
             await Shell.Current.GoToAsync("//LoginPage");
         }
+
+        private async void SettingsPage(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//SettingsPage");
+        }
     }
 }

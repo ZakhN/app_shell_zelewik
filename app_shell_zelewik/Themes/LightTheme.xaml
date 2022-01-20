@@ -3,10 +3,10 @@
                     x:Class="app_shell_zelewik.Themes.LightTheme">
     <Color x:Key="PageBackgroundColor">#97A5D3</Color>
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
-    <Color x:Key="PrimaryColor">WhiteSMoke</Color>
+    <Color x:Key="PrimaryColor">Black</Color>
     <Color x:Key="SecondaryColor">Black</Color>
     <Color x:Key="PrimaryTextColor">Black</Color>
-    <Color x:Key="SeondaryTextColor">White</Color>
+    <Color x:Key="SeondaryTextColor">Black</Color>
     <Color x:Key="TertiaryTextColor">#97A5D3</Color>
     <Color x:Key="TransparentColor">Transparent</Color>
 </ResourceDictionary>

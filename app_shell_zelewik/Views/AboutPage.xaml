@@ -28,18 +28,18 @@
                     <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
                 </ContentView>
             </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Application information" FontSize="Title"/>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text = "Categories number:"></Label>
-                    <Label x:Name="CategoriesNumber" Text = " "></Label>
-                    <Label Text = "Tasks number:"></Label>
-                    <Label x:Name ="ItemsNumber" Text = " "></Label>
+            <ScrollView Grid.Row="1">
+                <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                    <Label Text="Application information" FontSize="Title"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text = "Categories number:"></Label>
+                        <Label x:Name="CategoriesNumber" Text = " "></Label>
+                        <Label Text = "Tasks number:"></Label>
+                        <Label x:Name ="ItemsNumber" Text = " "></Label>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-        </ScrollView>
+            </ScrollView>
+        </StackLayout>
     </Grid>
 
 </ContentPage>

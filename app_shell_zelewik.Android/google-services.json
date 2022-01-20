@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "974608071219",
+    "project_id": "appshell-e0b06",
+    "storage_bucket": "appshell-e0b06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974608071219:android:005ff511fc89e04eb70146",
+        "android_client_info": {
+          "package_name": "com.companyname.app_shell_zelewik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974608071219-2g51cupiheie66phu5oqjo8g3a4b3pks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzs2MmKBUvl8usybZVpoSKsi-Ep4FXX5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974608071219-2g51cupiheie66phu5oqjo8g3a4b3pks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

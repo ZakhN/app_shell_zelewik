@@ -8,13 +8,20 @@
         <ToolbarItem Text="Save" Clicked="GoBack" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="labelTextColor">Coral</Color>
+            <x:Double x:Key="fontSize"></x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Category:" Style="{StaticResource labelStyle}" />
-        <Entry Text="{Binding Title}" FontSize="Small"/>
+        <Entry Text="{Binding Title}" FontSize="Small" TextColor="{StaticResource Key=labelTextColor}"/>
         <Label Text="Description:" Style="{StaticResource labelStyle}" />
-        <Editor Text="{Binding Description}" FontSize="Small"/>
+        <Editor Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource Key=labelTextColor}"/>
 
-        <Label Text="Success Rate:" Style="{StaticResource labelStyle}"/>
-        <Entry Text="{Binding SuccessRate}" FontSize="Small"/>
+        <Label Text="Success Rate:" Style="{StaticResource labelStyle}" />
+        <Entry Text="{Binding SuccessRate}" FontSize="Small" TextColor="{StaticResource Key=labelTextColor}"/>
     </StackLayout>
 </ContentPage>

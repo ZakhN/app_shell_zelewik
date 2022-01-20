@@ -15,7 +15,7 @@ namespace app_shell_zelewik.Services
         int databaseId;
         List<Category> categories;
         Random random = new Random();
-        FirebaseClient firebase = new FirebaseClient("https://taskmanagerapp-6c0f3-default-rtdb.europe-west1.firebasedatabase.app/");
+        FirebaseClient firebase = new FirebaseClient("https://appshell-e0b06-default-rtdb.europe-west1.firebasedatabase.app/");
 
         public FireBaseDataStore()
         {
@@ -39,7 +39,9 @@ namespace app_shell_zelewik.Services
         public async Task<bool> AddItemAsync(Item item)
         {
             //items.Add(item);
-            await firebase.Child("Items_" + databaseId).PostAsync(item);
+            await firebase
+                    .Child("Items_" + databaseId)
+                    .PostAsync(item);
 
             return await Task.FromResult(true);
         }
@@ -53,7 +55,7 @@ namespace app_shell_zelewik.Services
             }
             else
             {
-                AddItemAsync(item);
+                await AddItemAsync(item);
             }
 
             return await Task.FromResult(true);
@@ -89,6 +91,7 @@ namespace app_shell_zelewik.Services
                     Category = item.Object.Category
                 }).ToList();
             Debug.WriteLine($"Items: {items}");
+
             return items;
         }
 
@@ -109,7 +112,7 @@ namespace app_shell_zelewik.Services
             }
             else
             {
-                AddCategoryAsync(category);
+                await AddCategoryAsync(category);
             }
 
             return await Task.FromResult(true);

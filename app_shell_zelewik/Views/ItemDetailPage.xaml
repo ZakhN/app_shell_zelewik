@@ -9,22 +9,28 @@
         <ToolbarItem Text="Save" Clicked="GoBack" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="labelTextColor">Coral</Color>
+            <x:Double x:Key="fontSize"></x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Text:" Style="{StaticResource labelStyle}" />
-        <Entry Text="{Binding Text}" FontSize="Small"/>
+        <Entry Text="{Binding Text}" FontSize="Small" TextColor="{StaticResource Key=labelTextColor}"/>
         <Label Text="Description:" Style="{StaticResource labelStyle}" />
-        <Editor Text="{Binding Description}" FontSize="Small"/>
+        <Editor Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource Key=labelTextColor}"/>
 
         <Label Text="Date:" Style="{StaticResource labelStyle}"/>
-        <DatePicker Format="D" Date="{Binding Date}" DateSelected="DatePickerDate_DateSelected" Margin="0, -20, 0, 0">
-        </DatePicker>
+        <DatePicker Format="D" Date="{Binding Date}" DateSelected="DatePickerDate_DateSelected" Margin="0, -20, 0, 0" TextColor="{StaticResource Key=labelTextColor}"> </DatePicker>
         <StackLayout Orientation="Horizontal" Spacing="3" Padding="0">
             <Label Text="Importance" Style="{StaticResource labelStyle}"/>
             <Label Text="{Binding Importance}" TextColor="Black" FontSize="Medium"/>
         </StackLayout>
         <Slider Minimum="0" Maximum="5" Value="{Binding Importance}" HorizontalOptions="FillAndExpand" MinimumTrackColor="Coral"/>
         <Label Text="Category" Style="{StaticResource labelStyle}"/>
-        <Picker x:Name="picker" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedDepartment, Mode=TwoWay}" ItemDisplayBinding="{Binding Title}">
+        <Picker x:Name="picker" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedDepartment, Mode=TwoWay}" ItemDisplayBinding="{Binding Title}" TextColor="{StaticResource Key=labelTextColor}">
         </Picker>
     </StackLayout>
 

@@ -11,6 +11,13 @@
         <ToolbarItem Text="Add" Command="{Binding AddCategoryCommand}" />
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="labelTextColor">Coral</Color>
+            <x:Double x:Key="fontSize"></x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <RefreshView 
             x:DataType="local:CategoriesViewModel"
@@ -31,13 +38,15 @@
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16"
                                 FontFamily="Roboto-Thin"
+                                TextColor="{StaticResource Key=labelTextColor}"
                             />
                             <Label 
                                 Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="13"
                                 FontFamily="Roboto-Thin"
+                                TextColor="{StaticResource Key=labelTextColor}"
                             />
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer 

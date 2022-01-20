@@ -10,7 +10,7 @@
             <ResourceDictionary Source="Themes/LightTheme.xaml" />
             <Color x:Key="Primary">#2196F3</Color>
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
@@ -29,12 +29,12 @@
                 </Setter>
             </Style>
 
-            <Color x:Key="HeaderTextColor">#FF5733</Color>
+            <Color x:Key="HeaderTextColor">#FF57</Color>
             <Color x:Key="HeaderBackgroundColor">#fff</Color>
             <x:Double x:Key="fontSize">14</x:Double>
 
             <Style x:Key="labelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
                 <Setter Property="FontSize" Value="{StaticResource Key=fontSize}"/>
                 <Setter Property="FontFamily" Value="Roboto-Thin"/>
