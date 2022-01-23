@@ -28,35 +28,56 @@
                 x:Name="CategoriesListView"
                 ItemsSource="{Binding Categories}"
                 SelectionMode="None"
+                BackgroundColor="LightGray"
             >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:Category">
-                            <Label 
-                                Text="{Binding Title}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16"
-                                FontFamily="Roboto-Thin"
-                                TextColor="{StaticResource Key=labelTextColor}"
-                            />
-                            <Label 
-                                Text="{Binding Description}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="13"
-                                FontFamily="Roboto-Thin"
-                                TextColor="{StaticResource Key=labelTextColor}"
-                            />
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                    NumberOfTapsRequired="1"
-                                    Command="{Binding Source= {RelativeSource AncestorType={x:Type local:CategoriesViewModel}}, Path=CategoryTapped}"		
-                                    CommandParameter="{Binding .}"
-                                >
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
+                        <Frame CornerRadius="30" BorderColor="LightGray" HasShadow="True" BackgroundColor="AliceBlue">
+                            <StackLayout Padding="10" x:DataType="model:Category">
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="{StaticResource Key=labelTextColor}">Name:</Label>
+                                    <Label
+                                        Text="{Binding Title}" 
+                                        LineBreakMode="NoWrap" 
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="16"
+                                        FontFamily="Roboto-Thin"
+                                        TextColor="{StaticResource Key=labelTextColor}" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Green">Description: </Label>
+                                    <Label 
+                                        Text="{Binding Description}" 
+                                        LineBreakMode="NoWrap"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="13"
+                                        FontFamily="Roboto-Thin"
+                                        TextColor="Green"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Red">Success rate:</Label>
+                                    <Label 
+                                        Text="{Binding SuccessRate}" 
+                                        LineBreakMode="NoWrap"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="13"
+                                        FontFamily="Roboto-Thin"
+                                        TextColor="Red"/>
+                                </StackLayout>
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        NumberOfTapsRequired="1"
+                                        Command="{Binding Source= {RelativeSource AncestorType={x:Type local:CategoriesViewModel}}, Path=CategoryTapped}"		
+                                        CommandParameter="{Binding .}"
+                                    >
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

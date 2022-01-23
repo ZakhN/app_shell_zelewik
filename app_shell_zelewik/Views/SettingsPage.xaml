@@ -11,15 +11,18 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Picker Title="Theme"
-                VerticalOptions="Start" 
-                HorizontalOptions="Start"
-                TextColor="{StaticResource Key=labelTextColor}"
-                ItemsSource="{Binding Themes}"
-                SelectedItem="{Binding SelectedTheme}"
-                SelectedIndexChanged="OnPickerSelectionChanged"
-            />
-        </StackLayout>
+        <Frame BorderColor="LightGray" HasShadow="True" BackgroundColor="AliceBlue">
+            <StackLayout Orientation="Horizontal">
+                <Label FontSize="Body">Theme:</Label>
+                <Picker Title="Theme"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                    TextColor="{StaticResource Key=labelTextColor}"
+                    ItemsSource="{Binding Themes}"
+                    SelectedItem="{Binding SelectedTheme}"
+                    SelectedIndexChanged="OnPickerSelectionChanged"
+                />
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

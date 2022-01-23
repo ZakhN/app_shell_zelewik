@@ -25,30 +25,74 @@
     <RefreshView x:DataType="local:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
-                SelectionMode="None">
+                SelectionMode="None" 
+                BackgroundColor="LightGray">
+            
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item">
-                        <Label Text="{Binding Text}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16"
-                            FontFamily="Roboto-Thin"
-                            TextColor="{StaticResource Key=labelTextColor}"/>
-                        <Label Text="{Binding Description}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            TextColor="{StaticResource Key=labelTextColor}"
-                            FontSize="13"
-                            FontFamily="Roboto-Thin"/>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
-                                CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
+                    <Frame CornerRadius="30" BorderColor="LightGray" HasShadow="True" BackgroundColor="AliceBlue">
+                        <StackLayout Padding="10" x:DataType="model:Item" >
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="{StaticResource Key=labelTextColor}" >Name:</Label>
+                                <Label Text="{Binding Text}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"
+                                FontFamily="Roboto-Thin"
+                                TextColor="{StaticResource Key=labelTextColor}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Blue">Description:</Label>
+                                <Label Text="{Binding Description}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                TextColor="Blue"
+                                FontSize="13"
+                                FontFamily="Roboto-Thin"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Red">Category:</Label>
+                                <Label Text="{Binding Category}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"
+                                FontFamily="Roboto-Thin"
+                                TextColor="Red"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Green">Importance: </Label>
+                                <Label Text="{Binding Importance}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"
+                                FontFamily="Roboto-Thin"
+                                TextColor="Green"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Pink">Due date:</Label>
+                                <Label Text="{Binding Date}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"
+                                FontFamily="Roboto-Thin"
+                                TextColor="Pink"/>
+                            </StackLayout>
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
+                                    CommandParameter="{Binding .}">
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                        
+                        </StackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

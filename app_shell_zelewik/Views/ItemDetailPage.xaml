@@ -29,9 +29,9 @@
             <Label Text="{Binding Importance}" TextColor="Black" FontSize="Medium"/>
         </StackLayout>
         <Slider Minimum="0" Maximum="5" Value="{Binding Importance}" HorizontalOptions="FillAndExpand" MinimumTrackColor="Coral"/>
+
         <Label Text="Category" Style="{StaticResource labelStyle}"/>
-        <Picker x:Name="picker" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedDepartment, Mode=TwoWay}" ItemDisplayBinding="{Binding Title}" TextColor="{StaticResource Key=labelTextColor}">
-        </Picker>
+        <Picker x:Name="picker" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedDepartment, Mode=TwoWay}" ItemDisplayBinding="{Binding Title}" TextColor="{StaticResource Key=labelTextColor}"></Picker>
     </StackLayout>
 
 </ContentPage>
