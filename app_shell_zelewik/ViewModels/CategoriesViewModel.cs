@@ -54,7 +54,7 @@ namespace app_shell_zelewik.ViewModels
             {
                 IsBusy = false;
             }
-  
+
             CategoriesCount = Categories.Count;
 
             return;
@@ -62,7 +62,8 @@ namespace app_shell_zelewik.ViewModels
 
         public void OnAppearing(bool load)
         {
-            if (load) {
+            if (load)
+            {
                 Task task = Task.Run(() => ExecuteLoadCategoriesCommand());
                 task.Wait();
             }

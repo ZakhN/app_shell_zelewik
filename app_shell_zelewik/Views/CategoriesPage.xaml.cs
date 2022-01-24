@@ -1,7 +1,7 @@
 ﻿
+using app_shell_zelewik.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using app_shell_zelewik.ViewModels;
 
 namespace app_shell_zelewik.Views
 {
